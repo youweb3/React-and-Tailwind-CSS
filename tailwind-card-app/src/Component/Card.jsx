@@ -9,7 +9,7 @@ const Card = ({ title, description, buttonText, imageUrl }) => {
                 <p className="text-gray-700 text-base">{description}</p>
             </div>
             <div className="px-6 pt-4 pb-2">
-                <button className="bg-black hover:bg-blue-700 cursor-pointer border-4 hover:border-yellow-300 text-white font-bold py-2 px-4 rounded">
+                <button className="bg-black hover:bg-blue-700 cursor-pointer border-4 hover:border-red-800 text-white font-bold py-2 px-4 rounded">
                     {buttonText}
                 </button>
             </div>

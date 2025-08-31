@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Card from './Component/Card'
-import './App.css'
+import AddCardForm from './Component/AddCardForm';
+// import './App.css'
 
 function App() {
-  const cardData = [
+  const [cardData, setCardData] = useState([
     {
       title: "React Development",
       description: "Learn how to build web applications with React and Tailwind CSS.",
@@ -15,11 +17,18 @@ function App() {
       buttonText: "Explore",
       imageUrl: "https://codekitapp.com/images/help/free-tailwind-icon@2x.png"
     }
-  ];
+  ]);
+
+  const addCards = (newCard) => {
+    setCardData(prev => [...prev, newCard]);
+  };
+
 
   return (
     <div className='container mx-auto p-4'>
-      <h1 className='text-3xl font-bold text-center text-blue-700 mb-8px color-'>My Card Aplication</h1>
+      <h1 className='text-3xl font-bold text-center text-blue-700 mb-8px mt-4'>My Card Aplication</h1>
+
+      <AddCardForm onAdd={addCards} />
 
       <div className='flex flex-wrap justify-center'>
         {cardData.map((card, index) => (
